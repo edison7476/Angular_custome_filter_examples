@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="filter.js"></script>
+  </head>
+  <body>
+<h3>Capitalizing the first letter</h3>
+    <div ng-controller="myController">
+      <div style="display: inline-block; margin-right:20px;">
+        <h5>Nams without custom capitalize filter</h5>
+        <div ng-repeat="name in names">
+          <li>{{ name }}</li>
+        </div>
+      </div>
+
+      <div style="display: inline-block">
+        <h5>Nams with custom capitalize filter</h5>
+        <div ng-repeat="name in names">
+          <li>{{ name | capitalize }}</li>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
