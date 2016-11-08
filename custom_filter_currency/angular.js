@@ -1,7 +1,5 @@
 angular.module('myApp',[]).
 controller('myController', function ($scope){
-  $scope.h = 'hello';
-
   $scope.currencies = [100,88,76,90,124, 'Hello'];
 }).
 filter('customCurrency', function (){
