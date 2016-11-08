@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="angular.js"></script>
+  </head>
+  <body>
+    <div ng-controller="myController">
+        <div style="display: inline-block; margin-right:20px;">
+          <h4>Numbers without custom currency filter</h4>
+            <ul>
+              <li ng-repeat="currency in currencies">{{ currency }}</li>
+            </ul>
+        </div>
+
+        <div style="display: inline-block">
+          <h4>Numbers with custom currency filter</h4>
+            <ul>
+              <li ng-repeat="currency in currencies">{{ currency | customCurrency}}</li>
+            </ul>
+        </div>
+    </div>
+  </body>
+</html>
