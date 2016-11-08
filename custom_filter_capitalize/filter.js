@@ -13,5 +13,8 @@ myApp.filter('capitalize', function(){
         // console.log(newStr);
         return newStr;
     }
+    else{
+      return str;
+    }
   };
 });
