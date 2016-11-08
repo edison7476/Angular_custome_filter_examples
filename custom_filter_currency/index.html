@@ -5,20 +5,33 @@
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="angular.js"></script>
+    <style media="screen">
+      .box{
+        display: inline-block;
+        margin-right:20px;
+      }
+    </style>
   </head>
   <body>
     <div ng-controller="myController">
-        <div style="display: inline-block; margin-right:20px;">
+        <div class="box">
           <h4>Numbers without custom currency filter</h4>
             <ul>
               <li ng-repeat="currency in currencies">{{ currency }}</li>
             </ul>
         </div>
 
-        <div style="display: inline-block">
+        <div class="box">
           <h4>Numbers with custom currency filter</h4>
             <ul>
               <li ng-repeat="currency in currencies">{{ currency | customCurrency}}</li>
+            </ul>
+        </div>
+
+        <div class="box">
+          <h4>Numbers with custom currency filter</h4>
+            <ul>
+              <li ng-repeat="currency in currencies">{{ currency | customCurrency:'£'}}</li>
             </ul>
         </div>
     </div>
