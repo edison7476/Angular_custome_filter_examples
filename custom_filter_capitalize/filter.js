@@ -2,6 +2,10 @@ var myApp = angular.module('myApp', []);
 
 myApp.controller('myController', function($scope){
   $scope.names = ['edison', 'kyle', 'frank', 'grant', 'cole'];
+
+  $scope.print = function (){
+    console.log($scope.search);
+  };
 });
 
 myApp.filter('capitalize', function(){

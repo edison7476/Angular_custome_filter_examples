@@ -5,22 +5,31 @@
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="filter.js"></script>
+    <style media="screen">
+      .box{
+        display: inline-block;
+        margin-right:20px;
+      }
+    </style>
   </head>
   <body>
 <h3>Capitalizing the first letter</h3>
     <div ng-controller="myController">
-      <div style="display: inline-block; margin-right:20px;">
-        <h5>Nams without custom capitalize filter</h5>
-        <div ng-repeat="name in names">
-          <li>{{ name }}</li>
-        </div>
+      <div >
+        <label for="">Search Name: </label>
+        <input ng-model="search" ng-click="print()">
+        <label for="">Select Name: </label>
+        <select ng-model="selectedName" ng-options="name for name in names"></select>
       </div>
 
-      <div style="display: inline-block">
+      <div class="box">
+        <h5>Nams without custom capitalize filter</h5>
+          <li ng-repeat="name in names | filter: search ">{{ name }}</li>
+      </div>
+
+      <div class="box">
         <h5>Nams with custom capitalize filter</h5>
-        <div ng-repeat="name in names">
-          <li>{{ name | capitalize }}</li>
-        </div>
+          <li ng-repeat="name in names | filter: search ">{{ name | capitalize }}</li>
       </div>
 
     </div>
